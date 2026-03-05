@@ -26,7 +26,6 @@ const elements = {
     header: document.getElementById('header'),
     navMenu: document.getElementById('nav-menu'),
     navToggle: document.getElementById('nav-toggle'),
-    navClose: document.getElementById('nav-close'),
     navLinks: document.querySelectorAll('.nav__link'),
     cartBtn: document.getElementById('cart-btn'),
     cartPanel: document.getElementById('cart-panel'),
@@ -50,7 +49,6 @@ const elements = {
 
 // Mobile Nav
 elements.navToggle.addEventListener('click', () => elements.navMenu.classList.add('show'));
-elements.navClose.addEventListener('click', () => elements.navMenu.classList.remove('show'));
 
 // Cart Toggle
 const toggleCart = () => {
@@ -139,7 +137,9 @@ function getProductHTML(p) {
         <article class="card">
             <div class="card__img-box">
                 <img src="${p.image}" alt="${p.name}" class="card__img">
-                <button class="card__add" onclick="addToCart(${p.id})">AGREGAR AL CARRITO</button>
+                <button class="card__add-btn" onclick="addToCart(${p.id})">
+                    <i class="fa-solid fa-plus"></i> <span class="card__add-text">AGREGAR</span>
+                </button>
             </div>
             <div class="card__data">
                 <h3 class="card__title">${p.name}</h3>
@@ -177,7 +177,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('nav-catalog').addEventListener('click', (e) => { e.preventDefault(); switchView('catalog'); });
     document.getElementById('nav-gallery').addEventListener('click', (e) => { e.preventDefault(); switchView('home', '#lookbook'); });
     document.getElementById('home-link').addEventListener('click', (e) => { e.preventDefault(); switchView('home'); });
-    document.getElementById('hero-shop-btn').addEventListener('click', (e) => { e.preventDefault(); switchView('catalog'); });
 
     render();
     updateCartUI();

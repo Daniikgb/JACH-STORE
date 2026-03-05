@@ -36,10 +36,6 @@
                     <li class="nav__item"><a href="#catalog" class="nav__link" id="nav-catalog">Catálogo</a></li>
                     <li class="nav__item"><a href="#lookbook" class="nav__link" id="nav-gallery">Galería</a></li>
                 </ul>
-                <div class="nav__close" id="nav-close"
-                    style="font-family: var(--font-heading); font-size: 2rem; color: var(--white); cursor: pointer; text-decoration: underline;">
-                    CERRAR
-                </div>
             </div>
 
             <div class="nav__btns">
@@ -64,9 +60,6 @@
                                 DEFINIENDO <br> LA <span class="outline">ELEGANCIA</span> <br> URBANA
                             </h1>
                             <p class="hero__subtitle">JACH STORE / COLECCIÓN 24</p>
-                            <div class="hero__actions">
-                                <a href="#catalog" class="btn-editorial" id="hero-shop-btn">VER CATÁLOGO</a>
-                            </div>
                         </div>
                     </div>
                 </section>
@@ -131,7 +124,11 @@
         <div class="cart-panel__header">
             <h3>CARRITO</h3>
             <div class="cart-panel__close" id="cart-close">
-                <i class="fa-solid fa-xmark"></i>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
             </div>
         </div>
         <div class="cart-panel__content" id="cart-items">
@@ -152,9 +149,12 @@
             <div class="checkout-modal__header"
                 style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
                 <h3 style="font-family: var(--font-heading); font-size: 2rem;">FINALIZAR PEDIDO</h3>
-                <div class="checkout-modal__close" id="checkout-close-modal"
-                    style="font-family: var(--font-heading); font-size: 1.2rem; cursor: pointer; text-decoration: underline;">
-                    CERRAR
+                <div class="checkout-modal__close" id="checkout-close-modal">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
                 </div>
             </div>
             <p>Elige por dónde quieres contactar para coordinar tu pedido:</p>
