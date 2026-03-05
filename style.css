@@ -19,6 +19,14 @@
     --huge: 6rem;
 }
 
+@media screen and (max-width: 768px) {
+    :root {
+        --header-height: 100px;
+        --h1: 3.5rem;
+        --huge: 4.5rem;
+    }
+}
+
 @media screen and (min-width: 968px) {
     :root {
         --h1: 7rem;
@@ -81,7 +89,14 @@ button {
 }
 
 .section {
-    padding: 8rem 0;
+    padding: 4rem 0;
+}
+
+@media screen and (min-width: 768px) {
+    .section {
+
+        padding: 8rem 0;
+    }
 }
 
 .section__title-huge {
@@ -157,7 +172,7 @@ button {
 }
 
 .nav__logo img {
-    height: 120px;
+    height: calc(var(--header-height) - 40px);
     object-fit: contain;
     display: block;
 }
@@ -202,7 +217,29 @@ button {
     font-weight: 700;
 }
 
+.nav__toggle {
+    display: none;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 768px) {
+    .nav__list {
+        display: none;
+        /* Hide PC links on mobile header bar */
+    }
+
+    .nav__menu.show .nav__list {
+        display: flex;
+        /* Show them inside the mobile menu */
+    }
+
+    .nav__toggle {
+        display: block;
+    }
+
     .nav__menu {
         position: fixed;
         top: 0;
@@ -214,6 +251,7 @@ button {
         align-items: center;
         justify-content: center;
         transition: 0.5s;
+        z-index: 2005;
     }
 
     .nav__menu.show {
@@ -468,7 +506,13 @@ button {
     transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     display: flex;
     flex-direction: column;
-    padding: 3rem;
+    padding: 2rem;
+}
+
+@media screen and (max-width: 480px) {
+    .cart-panel {
+        padding: 1.5rem;
+    }
 }
 
 .cart-panel.show {
@@ -593,8 +637,14 @@ button {
 }
 
 .footer__logo {
-    height: 140px;
+    height: 100px;
     margin-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+    .footer__logo {
+        height: 140px;
+    }
 }
 
 .footer__socials {
@@ -653,9 +703,15 @@ button {
     background: var(--white);
     width: 100%;
     max-width: 500px;
-    padding: 3rem;
+    padding: 2rem;
     position: relative;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (min-width: 768px) {
+    .checkout-modal__card {
+        padding: 3rem;
+    }
 }
 
 .checkout-modal__header {
@@ -710,4 +766,46 @@ button {
 
 .checkout-option:hover i {
     color: var(--gold);
+}
+
+/* ==================== TOAST NOTIFICATION ==================== */
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--black);
+    color: var(--white);
+    padding: 1rem 2rem;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    z-index: 5000;
+    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    pointer-events: none;
+    letter-spacing: 1px;
+}
+
+.toast.show {
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ==================== ACCESSIBILITY & TOUCH ==================== */
+@media screen and (max-width: 768px) {
+    .btn-editorial {
+        width: 100%;
+        text-align: center;
+        padding: 1.2rem;
+    }
+
+    .card__add {
+        padding: 1.2rem;
+        transform: translateY(0);
+        /* Always visible on mobile for better UX */
+        opacity: 0.9;
+    }
+
+    .nav__link {
+        padding: 1rem 0;
+        display: block;
+    }
 }

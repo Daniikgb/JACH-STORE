@@ -22,9 +22,7 @@
     <!-- Navigation -->
     <header class="header" id="header">
         <nav class="nav container">
-            <div class="nav__toggle" id="nav-toggle">
-                <!-- Menú -->
-            </div>
+            <div class="nav__toggle" id="nav-toggle">MENÚ</div>
 
             <a href="#" class="nav__logo" id="home-link">
                 <img src="logo.jpg" alt="JACH STORE">
@@ -32,12 +30,13 @@
 
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="#home" class="nav__link active-link">Inicio</a></li>
-                    <li class="nav__item"><a href="#catalog" class="nav__link" id="catalog-link">Catálogo</a></li>
-                    <li class="nav__item"><a href="#lookbook" class="nav__link">Galería</a></li>
+                    <li class="nav__item"><a href="#home" class="nav__link active-link" id="nav-home">Inicio</a></li>
+                    <li class="nav__item"><a href="#catalog" class="nav__link" id="nav-catalog">Catálogo</a></li>
+                    <li class="nav__item"><a href="#lookbook" class="nav__link" id="nav-gallery">Galería</a></li>
                 </ul>
-                <div class="nav__close" id="nav-close">
-                    <!-- Cerrar -->
+                <div class="nav__close" id="nav-close"
+                    style="font-family: var(--font-heading); font-size: 2rem; color: var(--white); cursor: pointer; text-decoration: underline;">
+                    CERRAR
                 </div>
             </div>
 
@@ -129,8 +128,9 @@
     <div class="cart-panel" id="cart-panel">
         <div class="cart-panel__header">
             <h3>CARRITO</h3>
-            <div class="cart-panel__close" id="cart-close">
-                <!-- Cerrar -->
+            <div class="cart-panel__close" id="cart-close"
+                style="font-size: 1rem; font-weight: 700; cursor: pointer; text-decoration: underline;">
+                CERRAR
             </div>
         </div>
         <div class="cart-panel__content" id="cart-items">
@@ -148,9 +148,13 @@
     <!-- Checkout Modal -->
     <div class="checkout-modal" id="checkout-modal">
         <div class="checkout-modal__card">
-            <div class="checkout-modal__header">
-                <h3>SELECCIONA UNA SUCURSAL</h3>
-                <button class="checkout-modal__close" id="checkout-close-modal">&times;</button>
+            <div class="checkout-modal__header"
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h3 style="font-family: var(--font-heading); font-size: 2rem;">FINALIZAR PEDIDO</h3>
+                <div class="checkout-modal__close" id="checkout-close-modal"
+                    style="font-family: var(--font-heading); font-size: 1.2rem; cursor: pointer; text-decoration: underline;">
+                    CERRAR
+                </div>
             </div>
             <p>Elige por dónde quieres contactar para coordinar tu pedido:</p>
             <div class="checkout-modal__options grid">
@@ -169,6 +173,9 @@
             </div>
         </div>
     </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">AÑADIDO AL CARRITO</div>
 
     <!-- Sucursales Section -->
     <section class="locations section" id="locations">
