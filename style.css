@@ -219,13 +219,27 @@ button {
 
 .nav__toggle {
     display: none;
-    font-family: var(--font-heading);
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-size: 1.5rem;
     cursor: pointer;
+    transition: 0.3s;
+    padding: 0.5rem;
+}
+
+.nav__toggle:hover {
+    color: var(--gold);
 }
 
 @media screen and (max-width: 768px) {
+    .nav {
+        position: relative;
+    }
+
+    .nav__logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
     .nav__list {
         display: none;
         /* Hide PC links on mobile header bar */
@@ -540,9 +554,29 @@ button {
 .cart-panel__header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 3rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.cart-panel__header h3 {
     font-family: var(--font-heading);
+    font-size: 2.5rem;
+}
+
+.cart-panel__close {
     font-size: 2rem;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-panel__close:hover {
+    color: var(--gold);
+    transform: rotate(90deg);
 }
 
 .cart-panel__content {

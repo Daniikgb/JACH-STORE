@@ -98,11 +98,6 @@ function switchView(view, anchor = null) {
 }
 
 // Event Listeners for switching views
-document.getElementById('nav-home').addEventListener('click', (e) => { e.preventDefault(); switchView('home'); });
-document.getElementById('nav-catalog').addEventListener('click', (e) => { e.preventDefault(); switchView('catalog'); });
-document.getElementById('nav-gallery').addEventListener('click', (e) => { e.preventDefault(); switchView('home', '#lookbook'); });
-document.getElementById('home-link').addEventListener('click', (e) => { e.preventDefault(); switchView('home'); });
-document.getElementById('hero-shop-btn').addEventListener('click', (e) => { e.preventDefault(); switchView('catalog'); });
 
 // Checkout Modal
 elements.checkoutBtn.addEventListener('click', () => {
@@ -177,6 +172,13 @@ elements.filterBtns.forEach(btn => {
 
 // Init
 document.addEventListener('DOMContentLoaded', () => {
+    // Navigation Listeners
+    document.getElementById('nav-home').addEventListener('click', (e) => { e.preventDefault(); switchView('home'); });
+    document.getElementById('nav-catalog').addEventListener('click', (e) => { e.preventDefault(); switchView('catalog'); });
+    document.getElementById('nav-gallery').addEventListener('click', (e) => { e.preventDefault(); switchView('home', '#lookbook'); });
+    document.getElementById('home-link').addEventListener('click', (e) => { e.preventDefault(); switchView('home'); });
+    document.getElementById('hero-shop-btn').addEventListener('click', (e) => { e.preventDefault(); switchView('catalog'); });
+
     render();
     updateCartUI();
 
