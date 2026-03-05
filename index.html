@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JACH STORE | Streetwear Authority</title>
+    <meta name="description" content="Editorial street fashion for the urban generation.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;700;900&family=Oswald:wght@500;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__toggle" id="nav-toggle">
+                <!-- Menú -->
+            </div>
+
+            <a href="#" class="nav__logo" id="home-link">
+                <img src="logo.jpg" alt="JACH STORE">
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link active-link">Inicio</a></li>
+                    <li class="nav__item"><a href="#catalog" class="nav__link" id="catalog-link">Catálogo</a></li>
+                    <li class="nav__item"><a href="#lookbook" class="nav__link">Galería</a></li>
+                </ul>
+                <div class="nav__close" id="nav-close">
+                    <!-- Cerrar -->
+                </div>
+            </div>
+
+            <div class="nav__btns">
+                <button class="nav__cart-btn" id="cart-btn">
+                    <i class="fa-solid fa-shopping-bag"></i>
+                    <span class="nav__cart-count" id="cart-count">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div id="views-container">
+            <!-- Home View -->
+            <section id="home-view" class="view">
+                <!-- Immersive Hero -->
+                <section class="hero section" id="home">
+                    <div class="hero__bg-text">STREET</div>
+                    <div class="hero__container container grid">
+                        <div class="hero__content">
+                            <h1 class="hero__title">
+                                DEFINIENDO <br> LA <span class="outline">ELEGANCIA</span> <br> URBANA
+                            </h1>
+                            <p class="hero__subtitle">JACH STORE / COLECCIÓN 24</p>
+                            <div class="hero__actions">
+                                <a href="#catalog" class="btn-editorial" id="hero-shop-btn">VER CATÁLOGO</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Featured Section: Bold & Asymmetric -->
+                <section class="featured section container">
+                    <div class="section__header">
+                        <span class="section__subtitle">Lo más nuevo</span>
+                        <h2 class="section__title-huge">NUEVOS <br> INGRESOS</h2>
+                    </div>
+
+                    <div class="featured__grid grid" id="featured-products">
+                        <!-- Products will be injected by JS -->
+                    </div>
+                </section>
+
+                <!-- Lookbook: Minimalist Gallery -->
+                <section class="lookbook section" id="lookbook">
+                    <div class="container grid">
+                        <div class="lookbook__data">
+                            <h2 class="section__title-huge">VISUALS</h2>
+                            <p class="lookbook__description">Cultura urbana capturada por Jach Store.</p>
+                        </div>
+                        <div class="lookbook__gallery grid">
+                            <div class="lookbook__img-box tall"><img src="outfit.png" alt="Featured Look"></div>
+                            <div class="lookbook__img-box"><img src="vintaje.png" alt="Archive Style"></div>
+                            <div class="lookbook__img-box"><img src="conjuntogood.png" alt="Urban Set"></div>
+                            <div class="lookbook__img-box"><img src="remeraoverisize.png" alt="Oversize Tee"></div>
+                            <div class="lookbook__img-box wide"><img src="remerasmonocormaticas.png"
+                                    alt="Core Collection"></div>
+                            <div class="lookbook__img-box"><img src="vintaje2.png" alt="Vintage Sport"></div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Catalog View -->
+            <section id="catalog-view" class="view section" style="display: none;">
+                <div class="container">
+                    <div class="catalog__top">
+                        <h2 class="section__title-huge"> TODO EL <br> CATÁLOGO</h2>
+                        <div class="catalog__controls">
+                            <div class="catalog__filter-wrap">
+                                <button class="filter-chip active" data-filter="all">TODO</button>
+                                <button class="filter-chip" data-filter="t-shirts">REMERAS</button>
+                                <button class="filter-chip" data-filter="hoodies">CONJUNTOS</button>
+                                <button class="filter-chip" data-filter="accessories">LÍNEA RETRÔ</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catalog__grid grid" id="catalog-products">
+                        <!-- Products will be injected by JS -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-panel" id="cart-panel">
+        <div class="cart-panel__header">
+            <h3>CARRITO</h3>
+            <div class="cart-panel__close" id="cart-close">
+                <!-- Cerrar -->
+            </div>
+        </div>
+        <div class="cart-panel__content" id="cart-items">
+            <!-- Items -->
+        </div>
+        <div class="cart-panel__footer">
+            <div class="cart-panel__total">
+                <span>TOTAL</span>
+                <span id="cart-total">Gs. 0</span>
+            </div>
+            <button class="btn-editorial full" id="checkout-btn">FINALIZAR COMPRA</button>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="checkout-modal" id="checkout-modal">
+        <div class="checkout-modal__card">
+            <div class="checkout-modal__header">
+                <h3>SELECCIONA UNA SUCURSAL</h3>
+                <button class="checkout-modal__close" id="checkout-close-modal">&times;</button>
+            </div>
+            <p>Elige por dónde quieres contactar para coordinar tu pedido:</p>
+            <div class="checkout-modal__options grid">
+                <button class="checkout-option" data-wa="595983110060">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>Cde-Central</span>
+                </button>
+                <button class="checkout-option" data-wa="595983069456">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>Cde-Av. San José</span>
+                </button>
+                <button class="checkout-option" data-wa="595982053000">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>Hernandarias</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sucursales Section -->
+    <section class="locations section" id="locations">
+        <div class="container">
+            <h2 class="section__title-huge">SUCURSALES</h2>
+            <div class="locations__grid grid">
+                <div class="location-card">
+                    <span class="location-card__icon"><i class="fa-brands fa-whatsapp"></i></span>
+                    <div class="location-card__data">
+                        <h4>Cde-Central</h4>
+                        <a href="https://wa.me/595983110060" target="_blank" class="location-card__link">Contactar vía
+                            WhatsApp</a>
+                    </div>
+                </div>
+                <div class="location-card">
+                    <span class="location-card__icon"><i class="fa-brands fa-whatsapp"></i></span>
+                    <div class="location-card__data">
+                        <h4>Cde-Av.San José</h4>
+                        <a href="https://wa.me/595983069456" target="_blank" class="location-card__link">Contactar vía
+                            WhatsApp</a>
+                    </div>
+                </div>
+                <div class="location-card">
+                    <span class="location-card__icon"><i class="fa-brands fa-whatsapp"></i></span>
+                    <div class="location-card__data">
+                        <h4>Hernandarias</h4>
+                        <a href="https://wa.me/595982053000" target="_blank" class="location-card__link">Contactar vía
+                            WhatsApp</a>
+                    </div>
+                </div>
+                <div class="location-card full">
+                    <span class="location-card__icon"><i class="fa-solid fa-store"></i></span>
+                    <div class="location-card__data">
+                        <h4>Nuestras tiendas</h4>
+                        <a href="https://beacons.ai/jachstore" target="_blank"
+                            class="location-card__link">beacons.ai/jachstore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Floating Button (Optional: Link to the locations section for choice) -->
+    <a href="#locations" class="wabtn">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer container section">
+        <div class="footer__grid grid">
+            <div class="footer__brand">
+                <img src="logo.jpg" alt="JACH" class="footer__logo">
+                <p>Estableciendo el futuro del streetwear.</p>
+            </div>
+            <div class="footer__nav">
+                <h4>SÍGUENOS</h4>
+                <div class="footer__socials">
+                    <a href="#">INSTAGRAM</a>
+                    <a href="#">FACEBOOK</a>
+                    <a href="#">TIKTOK</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>DEMO DE MUESTRA CREADO POR MATHIAS GALEANO</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
